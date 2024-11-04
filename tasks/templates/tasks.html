@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <main class="container">
+        <h1 class="text-center display-3 py-4">Tareas Pendientes</h1>
+        <div class="row">
+            {% for task in tasks %}
+                <div class="col-md-4">
+                    <div class="card card-body bg-light-subtle text-center m-3">
+                        <h3>{{task.titulo}} {% if task.importante %} 🌟 {% endif %}</h3>
+                        <p> {{task.descripcion}} </p>
+                        <div class="row">
+                            <form action="{% url 'task_complete' task.id %}" method="POST" class="col mt-1">
+                                {% csrf_token %}
+                                <div class="text-center">
+                                    <button class="btn btn-success"> 
+                                        Completar 
+                                    </button>
+                                </div>
+                            </form>
+
+                            <form action="{% url 'task_delete' task.id %}" method="POST" class="col mt-1">
+                                <button class="btn btn-danger "> 
+                                    Eliminar 
+                                </button>
+                                {% csrf_token %}
+                            </form>
+
+                            <div class="col mt-1">
+                                <a href="{% url 'task_details' task.id %}" class="btn btn-dark ">
+                                    Modificar
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </main>
+
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <main class="container">
+        <h1 class="text-center display-3 py-4">Tareas Completadas</h1>
+        <div class="row">
+            {% for task in tasks_completed %}
+                <div class="col-md-4">
+                    <div class="card card-body bg-light-subtle text-center m-3">
+                        <h3>{{task.titulo}} {% if task.importante %} 🌟 {% endif %}</h3>
+                        <p> {{task.descripcion}} </p>
+                        <!-- pipe para formatear el como se ve la fecha -->
+                        <p>Completada el: {{task.datecompleted.day}}/{{task.datecompleted.month}}/{{task.datecompleted.year}}</p>
+                        <p>Horario: {{task.datecompleted | date:'H:i'}}</p>
+                        <div class="text-center">
+                            <form action="{% url 'task_delete' task.id %}" method="POST">
+                                {% csrf_token %}
+                                <button class="btn btn-dark"> 
+                                    Eliminar 
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </main>
+
+{% endblock %}
