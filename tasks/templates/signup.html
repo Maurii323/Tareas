@@ -8,21 +8,21 @@
         <!-- offset-md-4: Desplaza la columna 4 unidades hacia la derecha en pantallas medianas o más grandes -->
         <section class="col-md-4 offset-md-4 mt-5">
             <form method="POST" class="card card-body bg-light-subtle ">
-                <h1 class="text-center">Registrarse</h1>
+                <h1 class="text-center">Sign Up</h1>
                 {% csrf_token %}
                 <div class="mb-3">
-                    <label for="username">Usuario:</label>
-                    <input type="text" placeholder="escribe tu usuario" name="username" id="username" class="form-control">
+                    <label for="username">Username:</label>
+                    <input type="text" placeholder="Write yor username" name="username" id="username" class="form-control">
                 </div>
 
                 <div class="mb-3">
-                    <label for="password1">Contraseña:</label>
-                    <input type="password" placeholder="escribe tu contraseña" name="password1" id="password1" class="form-control">
+                    <label for="password1">Password:</label>
+                    <input type="password" placeholder="Write your password" name="password1" id="password1" class="form-control">
                 </div>
 
                 <div class="mb-3">
-                    <label for="password2">Confirma tu contraseña:</label>
-                    <input type="password" placeholder="escribe tu contraseña de nuevo" name="password2" id="password2" class="form-control">
+                    <label for="password2">Confirm your password:</label>
+                    <input type="password" placeholder="Write your password again" name="password2" id="password2" class="form-control">
                 </div>
                 
                 <p class="text-center text-danger">
@@ -32,7 +32,7 @@
 
                 <div class="text-center">
                     <button class="btn btn-dark">
-                        Registrarse
+                        Sign Up
                     </button>
                 </div>
 

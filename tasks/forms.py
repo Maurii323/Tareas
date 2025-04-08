@@ -7,7 +7,7 @@ class taskForm(forms.ModelForm):              # ModelForm sirve para crear un fo
         fields = ['titulo','descripcion','importante']    # se ponen los campos del modelo que va a pasarse por el form
         # se pone las clases css que va a tener cada campo
         widgets = {
-            'titulo' : forms.TextInput(attrs={'class':'form-control','placeholder':'Escribe un titulo'}),
-            'descripcion' : forms.Textarea(attrs={'class':'form-control','placeholder':'Escribe una descripción'}),
+            'titulo' : forms.TextInput(attrs={'class':'form-control','placeholder':'Write a title'}),
+            'descripcion' : forms.Textarea(attrs={'class':'form-control','placeholder':'Write a description'}),
             'importante' : forms.CheckboxInput(attrs={'class':'form-check-input'})
         }

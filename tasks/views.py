@@ -29,10 +29,10 @@ def signup(request):
                 return redirect('home')
             except IntegrityError:          # maneja la excepcion de que el usuario ya existe en la base de datos
                 return render(request,'signup.html',{             
-                    'error' : 'El nombre de usuario ya existe'
+                    'error' : 'Username already exists'
                 })
         return render(request,'signup.html',{
-            'error' : 'Las contraseñas no coinciden'
+            'error' : 'The passwords do not match'
         })
 
 #funcion para logearse con una cuenta ya creada
@@ -46,7 +46,7 @@ def signin(request):
         user = authenticate(request, username=username, password=password)
         if user is None:                            #si el usuario esta vacio
             return render(request,'login.html',{
-            'error' : 'Usuario o contraseña incorrecto'
+            'error' : 'Incorrect username or password'
             })
         else:
             login(request, user)                    #Crea una cookie de sesión con el usuario autenticado
@@ -82,7 +82,7 @@ def create_task(request):
         except ValueError:                      #maneja la excepcion de que hay un error en los valores enviados
             return render(request,'create_task.html',{
                 'taskform' : taskForm,
-                'error' : 'Por favor proporcione datos válidos'
+                'error' : 'Please provide valid data'
             })
 
 #funcion para mostrar las tareas
@@ -122,7 +122,7 @@ def task_details(request, task_id):
             return render(request,'task_details.html',{
                 'task' : task,
                 'taskForm' : form,
-                'error' : 'Error actualizando la tarea'
+                'error' : 'Error updating task'
             })
 
 # funcion para marcar una tarea como completada

@@ -3,7 +3,7 @@
 {% block content %}
 
     <main class="container">
-        <h1 class="text-center display-3 py-4">Tareas Pendientes</h1>
+        <h1 class="text-center display-3 py-4">Pending Tasks</h1>
         <div class="row">
             {% for task in tasks %}
                 <div class="col-md-4">
@@ -15,21 +15,21 @@
                                 {% csrf_token %}
                                 <div class="text-center">
                                     <button class="btn btn-success"> 
-                                        Completar 
+                                        Complete 
                                     </button>
                                 </div>
                             </form>
 
                             <form action="{% url 'task_delete' task.id %}" method="POST" class="col mt-1">
                                 <button class="btn btn-danger "> 
-                                    Eliminar 
+                                    Delete 
                                 </button>
                                 {% csrf_token %}
                             </form>
 
                             <div class="col mt-1">
                                 <a href="{% url 'task_details' task.id %}" class="btn btn-dark ">
-                                    Modificar
+                                    Modify
                                 </a>
                             </div>
 

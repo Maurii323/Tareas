@@ -5,47 +5,47 @@
     <main class="container py-5">
        <section class="card card-body bg-light-subtle">
             <h1 class="display-1 text-center">Django App</h1>
-            <h5> ¡Bienvenido {{user.username}} a mi proyecto de administración de tareas!</h5>
+            <h5> ¡Welcome {{user.username}} to my task management project!</h5>
             <p>
-                Este es mi primer proyecto en django y SQLite3, y representa una parte importante de mi portfolio como desarrollador.            
+                This is my first project in django and SQLite3, and represents an important part of my portfolio as a developer.            
             </p>
-            <h5>Caracteristicas principales de la aplicacion</h5>
+            <h5>Main features of the application</h5>
             <ul>
                 <li>
                     <p>
-                        CRUD de Tareas: Funcionalidades completas de CRUD (Crear, Leer, Actualizar, Eliminar) para la gestión de tareas, 
-                        facilitando la organización y seguimiento de actividades pendientes y completadas.
+                        Task CRUD: Complete CRUD (Create, Read, Update, Delete) functionalities for task management, 
+                        facilitating the organization and monitoring of pending and completed activities.
                     </p>
                 </li>
 
                 <li>
                     <p>
-                        Registro y Login de Usuarios: Sistema de registro y autenticación que permite a los usuarios crear cuentas y acceder de manera segura a sus tareas personales.
+                        User Registration and Login: Registration and authentication system that allows users to create accounts and securely access their personal tasks.
                     </p>
                 </li>
                 <li>
                     <p>
-                        Base de Datos SQLite3: Utilización de SQLite3 como base de datos para almacenar de manera segura y eficiente la información de las tareas.
+                        SQLite3 Database: Use of SQLite3 as a database to safely and efficiently store task information.
                     </p>
                 </li>
                 <li>
                     <p>
-                        bootstrap: Utilizacion de bootstrap para los estilos de la aplicacion.
+                        bootstrap: Use of bootstrap for application styles.
                     </p>
                 </li>
             </ul>
-            <p>Gracias por su visita y su interés.</p>
+            <p>Thank you for your visit and your interest                .</p>
                 
 
             {% if not user.is_authenticated %}
                 <div class="text-center">
-                    <a class= "btn btn-dark" href="{% url 'signup' %}"> Registrarse</a>
-                    <a class= "btn btn-dark" href="{% url 'login' %}"> Iniciar Sesión</a>
+                    <a class= "btn btn-dark" href="{% url 'signup' %}"> Sign Up</a>
+                    <a class= "btn btn-dark" href="{% url 'login' %}"> Log In</a>
                 </div>
             {% else %}
                 <div class="text-center py-2">
-                    <a class= "btn btn-dark" href="{% url 'create_task' %}"> Crear una Tarea</a>
-                    <a class= "btn btn-dark" href="{% url 'logout' %}"> Cerrar Sesión</a>
+                    <a class= "btn btn-dark" href="{% url 'create_task' %}"> Create a Task</a>
+                    <a class= "btn btn-dark" href="{% url 'logout' %}"> Log Out</a>
                 </div>
             {% endif %}
         </section>
